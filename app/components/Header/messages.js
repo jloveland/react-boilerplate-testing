@@ -14,4 +14,8 @@ export default defineMessages({
     id: 'boilerplate.components.Header.features',
     defaultMessage: 'Features',
   },
+  features: {
+    id: 'boilerplate.components.Header.example',
+    defaultMessage: 'Example API Call',
+  },
 });
