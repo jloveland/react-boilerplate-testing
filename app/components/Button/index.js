@@ -24,7 +24,7 @@ function Button(props) {
   if (props.handleRoute) {
     button = (
       <StyledButton onClick={props.handleRoute}>
-        {Children.toArray(props.children)}
+        {Children.toArray(props.children)}/
       </StyledButton>
     );
   }
