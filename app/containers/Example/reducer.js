@@ -16,7 +16,9 @@ function exampleReducer(state = initialState, action) {
   switch (action.type) {
     case CALL_API:
       return state
-        .setIn(['apiCall'], true);
+        .set('loading', true)
+        .set('error', false)
+        .setIn('apiCall', true);
     case DEFAULT_ACTION:
       return state;
     default:

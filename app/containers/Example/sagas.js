@@ -5,7 +5,6 @@
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { CALL_API } from 'containers/Example/constants';
-// import { callAPI } from 'containers/Example/actions';
 import request from 'utils/request';
 
 // Individual exports for testing

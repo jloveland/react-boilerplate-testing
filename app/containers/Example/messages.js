@@ -7,8 +7,8 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   header: {
-    id: 'app.containers.Example.header',
-    defaultMessage: 'Example container - API call (console.log).',
+    id: 'app.containers.Example.newheader',
+    defaultMessage: 'Example Container (console API call)',
   },
   apiErrorMessage: {
     id: 'app.containers.Example.apiError.message',

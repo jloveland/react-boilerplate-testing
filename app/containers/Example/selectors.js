@@ -7,13 +7,8 @@ const selectExampleDomain = () => (state) => state.get('example');
 
 /**
  * Other specific selectors
- */
-
-
-/**
  * Default selector used by Example
  */
-
 const makeSelectExample = () => createSelector(
   selectExampleDomain(),
   (substate) => substate.toJS()
