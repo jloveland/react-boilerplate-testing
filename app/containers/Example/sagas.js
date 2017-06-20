@@ -5,6 +5,7 @@
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { CALL_API } from 'containers/Example/constants';
+import { callApiSuccess, callApiError } from 'containers/Example/actions';
 import request from 'utils/request';
 
 // Individual exports for testing
@@ -16,10 +17,10 @@ export function* defaultSaga() {
 export function* getEvent() {
   const requestURL = 'http://api-app.espn.com//v1/sports/baseball/mlb/events/320328111';
   try {
-    const event = yield call(request, requestURL);
-    console.log(event);
+    const response = yield call(request, requestURL);
+    yield put(callApiSuccess(response));
   } catch (err) {
-    console.log('API ERROR');
+    yield put(callApiError(err));
   }
 }
 

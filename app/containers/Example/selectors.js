@@ -6,15 +6,33 @@ import { createSelector } from 'reselect';
 const selectExampleDomain = () => (state) => state.get('example');
 
 /**
- * Other specific selectors
  * Default selector used by Example
  */
 const makeSelectExample = () => createSelector(
   selectExampleDomain(),
-  (substate) => substate.toJS()
+  (exampleState) => exampleState.toJS()
+);
+
+const makeSelectExampleLoading = () => createSelector(
+  selectExampleDomain(),
+  (exampleState) => exampleState.get('loading')
+);
+
+const makeSelectExampleError = () => createSelector(
+  selectExampleDomain(),
+  (exampleState) => exampleState.get('error')
+);
+
+const makeSelectExampleResonse = () => createSelector(
+  selectExampleDomain(),
+  (exampleState) => exampleState.getIn(['response'])
 );
 
 export default makeSelectExample;
 export {
   selectExampleDomain,
+  makeSelectExample,
+  makeSelectExampleLoading,
+  makeSelectExampleError,
+  makeSelectExampleResonse,
 };

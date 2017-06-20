@@ -1,25 +1,43 @@
 /*
- *
  * Example actions
- *
  */
 
 import {
-  DEFAULT_ACTION,
   CALL_API,
+  CALL_API_SUCCESS,
+  CALL_API_ERROR,
 } from './constants';
 
-export function defaultAction() {
+/**
+ * make API call
+ * @returns {{type}}
+ */
+export function callApi() {
   return {
-    type: DEFAULT_ACTION,
+    type: CALL_API,
   };
 }
 
 /**
- * call event api
+ * API returned response
+ * @param response
+ * @returns {{type: *, response: *}}
  */
-export function callAPI() {
+export function callApiSuccess(response) {
   return {
-    type: CALL_API,
+    type: CALL_API_SUCCESS,
+    response,
+  };
+}
+
+/**
+ * API response error
+ * @param error
+ * @returns {{type: *, error: *}}
+ */
+export function callApiError(error) {
+  return {
+    type: CALL_API_ERROR,
+    error,
   };
 }

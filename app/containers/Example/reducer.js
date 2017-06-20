@@ -1,26 +1,42 @@
 /*
- *
  * Example reducer
- *
  */
 
 import { fromJS } from 'immutable';
 import {
-  DEFAULT_ACTION,
   CALL_API,
+  CALL_API_SUCCESS,
+  CALL_API_ERROR,
 } from './constants';
 
-const initialState = fromJS({});
+// The initial state of the App
+const initialState = fromJS({
+  loading: false,
+  error: false,
+  response: false,
+});
 
+/**
+ * manage API response states
+ * @param state
+ * @param action
+ * @returns {*}
+ */
 function exampleReducer(state = initialState, action) {
   switch (action.type) {
     case CALL_API:
       return state
         .set('loading', true)
         .set('error', false)
-        .setIn(['apiCall'], true);
-    case DEFAULT_ACTION:
-      return state;
+        .setIn(['response'], false);
+    case CALL_API_SUCCESS:
+      return state
+        .setIn(['response'], action.response)
+        .set('loading', false)
+    case CALL_API_ERROR:
+      return state
+        .set('error', action.error)
+        .set('loading', false);
     default:
       return state;
   }
