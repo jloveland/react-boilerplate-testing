@@ -2,17 +2,15 @@
  * Example
  */
 import React from 'react';
-// import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
-import Form from './Form';
+import JSONPretty from 'react-json-pretty';
 import Button from 'components/Button';
-import ReposList from 'components/List';
+import Form from './Form';
 import messages from './messages';
 import { callApi } from './actions';
 import { makeSelectExample, makeSelectExampleLoading, makeSelectExampleError, makeSelectExampleResonse } from './selectors';
-// import List from 'components/List';
 
 
 export class Example extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -36,7 +34,7 @@ export class Example extends React.PureComponent { // eslint-disable-line react/
         <Form>
           <Button onClick={this.props.makeCall}>Call API!</Button>
         </Form>
-        {/*<ReposList {...responseProps} />*/}
+        <JSONPretty id="response" json={response}></JSONPretty>
       </div>
     );
   }
