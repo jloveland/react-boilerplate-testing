@@ -12,10 +12,10 @@ export default defineMessages({
   },
   buttonText: {
     id: 'app.containers.Example.buttonText',
-    defaultMessage: 'CALL API!',
+    defaultMessage: 'API TEST... JUST CLICK THE BUTTON!',
   },
   buttonTextSuccess: {
     id: 'app.containers.Example.buttonTextSuccess',
-    defaultMessage: 'SUCCESS!',
+    defaultMessage: 'SUCCESS...',
   },
 });

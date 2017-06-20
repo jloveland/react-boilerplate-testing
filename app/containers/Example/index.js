@@ -36,6 +36,7 @@ export class Example extends React.PureComponent { // eslint-disable-line react/
 
     return (
       <div>
+        <br />
         { button }
         <ExampleJson {...responseProps} />
         <br />
