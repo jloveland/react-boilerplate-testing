@@ -40,7 +40,6 @@ export class Example extends React.PureComponent { // eslint-disable-line react/
   }
 }
 
-
 Example.propTypes = {
   makeCall: React.PropTypes.func,
   loading: React.PropTypes.bool,
