@@ -10,8 +10,12 @@ export default defineMessages({
     id: 'app.containers.Example.newheader',
     defaultMessage: 'Example Container (console API call)',
   },
-  apiErrorMessage: {
-    id: 'app.containers.Example.apiError.message',
-    defaultMessage: 'API ERROR!',
+  buttonText: {
+    id: 'app.containers.Example.buttonText',
+    defaultMessage: 'CALL API!',
+  },
+  buttonTextSuccess: {
+    id: 'app.containers.Example.buttonTextSuccess',
+    defaultMessage: 'SUCCESS!',
   },
 });

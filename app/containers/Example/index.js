@@ -7,7 +7,6 @@ import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import ExampleJson from 'components/ExampleJson';
 import Button from 'components/Button';
-import Form from './Form';
 import messages from './messages';
 import { callApi } from './actions';
 import { makeSelectExample, makeSelectExampleLoading, makeSelectExampleError, makeSelectExampleResonse } from './selectors';
@@ -27,12 +26,14 @@ export class Example extends React.PureComponent { // eslint-disable-line react/
       response,
     };
 
+    let buttonText = <FormattedMessage {...messages.buttonText} />;
+    if (response !== false) {
+      buttonText = <FormattedMessage {...messages.buttonTextSuccess} />;
+    }
+
     return (
       <div>
-        <FormattedMessage {...messages.header} />
-        <Form>
-          <Button onClick={this.props.makeCall}>Call API!</Button>
-        </Form>
+        <Button onClick={this.props.makeCall}>{buttonText}</Button>
         <ExampleJson {...responseProps} />
         <br />
       </div>
