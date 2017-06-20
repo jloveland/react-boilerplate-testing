@@ -9,10 +9,10 @@ function Footer() {
   return (
     <Wrapper>
       <section>
-        <FormattedMessage {...messages.licenseMessage} />
+        <LocaleToggle />
       </section>
       <section>
-        <LocaleToggle />
+        <FormattedMessage {...messages.newlicenseMessage} />
       </section>
       <section>
         <FormattedMessage

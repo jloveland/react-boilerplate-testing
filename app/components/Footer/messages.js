@@ -6,9 +6,9 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  licenseMessage: {
+  newlicenseMessage: {
     id: 'boilerplate.components.Footer.license.message',
-    defaultMessage: 'This project is licensed under the MIT license.',
+    defaultMessage: 'This project is licensed under... NOT',
   },
   authorMessage: {
     id: 'boilerplate.components.Footer.author.message',
