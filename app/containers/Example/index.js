@@ -5,8 +5,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
-import ExampleJson from 'components/ExampleJson';
 import Button from 'components/Button';
+import ExampleJson from 'components/ExampleJson';
+import Img from 'components/ExampleJson/Img';
+import Pic from 'components/ExampleJson/api.jpg';
+import H2 from 'components/H2';
 import messages from './messages';
 import { callApi } from './actions';
 import { makeSelectExample, makeSelectExampleLoading, makeSelectExampleError, makeSelectExampleResonse } from './selectors';
@@ -26,14 +29,14 @@ export class Example extends React.PureComponent { // eslint-disable-line react/
       response,
     };
 
-    let buttonText = <FormattedMessage {...messages.buttonText} />;
+    let button = <div><Button onClick={this.props.makeCall}><FormattedMessage {...messages.buttonText} /></Button></div>;
     if (response !== false) {
-      buttonText = <FormattedMessage {...messages.buttonTextSuccess} />;
+      button = <div><Img src={Pic} alt="pic" /><br /><H2><FormattedMessage {...messages.buttonTextSuccess} /></H2></div>;
     }
 
     return (
       <div>
-        <Button onClick={this.props.makeCall}>{buttonText}</Button>
+        { button }
         <ExampleJson {...responseProps} />
         <br />
       </div>
