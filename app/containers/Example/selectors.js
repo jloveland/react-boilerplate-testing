@@ -28,6 +28,22 @@ const makeSelectExampleResonse = () => createSelector(
   (exampleState) => exampleState.getIn(['response'])
 );
 
+const makeSelectLocationState = () => {
+  let prevRoutingState;
+  let prevRoutingStateJS;
+
+  return (exampleState) => {
+    const routingState = exampleState.get('route'); // or state.route
+
+    if (!routingState.equals(prevRoutingState)) {
+      prevRoutingState = routingState;
+      prevRoutingStateJS = routingState.toJS();
+    }
+
+    return prevRoutingStateJS;
+  };
+};
+
 export default makeSelectExample;
 export {
   selectExampleDomain,
@@ -35,4 +51,5 @@ export {
   makeSelectExampleLoading,
   makeSelectExampleError,
   makeSelectExampleResonse,
+  makeSelectLocationState,
 };
